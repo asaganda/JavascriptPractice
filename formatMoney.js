@@ -8,7 +8,9 @@
 
 export const formatMoney = (amount) => {
     // Write code here
-    // amount to string via toFixed(2) method
-    return `$${amount.toLocaleString()}`;
-    // return `$${x.toFixed(2)}`
+    // use tolocalestring js method
+    return "$" + amount.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+    })
 }
