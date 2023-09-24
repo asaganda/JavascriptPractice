@@ -20,6 +20,11 @@ const handleCheck = position => {
     updatedCheckedState[position].checked = !updatedCheckedState[position].checked
     setCheckboxes(updatedCheckedState)
 }
+const handleClick = () => {
+    const updatedCheckedState = [...checkboxes]
+    updatedCheckedState.map((item) => item.checked = true)
+    setCheckboxes(updatedCheckedState);
+}
 
 return (
     <Container>
@@ -38,7 +43,7 @@ return (
             </CheckboxLabel>
         ))}
         </CheckboxContainer>
-        <SelectAllButton data-testid="button">Select All</SelectAllButton>
+        <SelectAllButton data-testid="button" onClick={handleClick}>Select All</SelectAllButton>
     </Container>
 );
 };
